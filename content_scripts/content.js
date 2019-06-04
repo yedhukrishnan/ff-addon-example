@@ -1,12 +1,8 @@
-import Honeybadger from 'honeybadger-js';
+// Content Script
 
-const HONEYBADGER_API_KEY = '===============';
+console.log('Content script loaded');
 
-Honeybadger.configure({
-  apiKey: HONEYBADGER_API_KEY,
-  environment: 'development',
-  debug: true,
-  revision: 0.1
-});
-
-console.log('Hi');
+window.onerror = error => {
+  console.log('On Error Handler');
+  console.log(error);
+}
